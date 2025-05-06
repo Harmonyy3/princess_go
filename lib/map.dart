@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 
 class Mymap extends StatelessWidget {
   final double size;
+  final String imagePath;
 
-  const Mymap({super.key, required this.size});
+  const Mymap({super.key, required this.size, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
+      width: 80,
       height: size,
       decoration: BoxDecoration(
-        color: Colors.grey,
-        border: Border.all(width: 5, color: Colors.green),
-        borderRadius: BorderRadius.circular(15),
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(8),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

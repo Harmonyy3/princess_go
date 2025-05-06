@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'homeScreen.dart';
 import 'package:google_fonts/google_fonts.dart';
+//import 'audio.dart';
+//import 'package:audioplayers/audioplayers.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -11,7 +13,9 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
-  bool castle=false; //add a fade in for castle
+  //final AudioPlayer _audioPlayer = AudioPlayer();
+
+  bool castle=false;
 
   @override
   void initState() {
@@ -62,6 +66,12 @@ class _IntroScreenState extends State<IntroScreen> {
           SizedBox(height: 30),
           ElevatedButton(
             onPressed: () {
+              //for unknown reason the audio is not working, skipping rn
+            //await AudioManager()
+              //.player
+                //.setSource(AssetSource('sound/back2.mp3'));
+             //await AudioManager().player.setReleaseMode(ReleaseMode.loop);
+             //await AudioManager().player.resume();
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(builder: (context) => Homescreen()),
               );
@@ -74,7 +84,7 @@ class _IntroScreenState extends State<IntroScreen> {
               ),
             ),
             child: Text(
-              'Start Game',
+              'Start Game', 
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
